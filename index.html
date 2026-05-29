@@ -172,7 +172,7 @@
             { img: "pic15.jpg", cap: "Marry Me Again 💍" },
             { img: "pic16.jpg", cap: "My Brightest Light ⭐" },
             { img: "pic17.jpg", cap: "I Love You Hamesha! 💕" },
-            { img: "pic18.jpg", cap: "Our Beautiful Forever ✨" } // Pic 18 for Proposal Climax
+            { img: "pic18.jpg", cap: "Our Beautiful Forever ✨" } 
         ];
 
         function triggerCinematic() {
@@ -195,6 +195,7 @@
             renderSlide();
         }
 
+        // Render Slide System
         function renderSlide() {
             const frame = document.querySelector('.slide-frame');
             const propTitle = document.getElementById('propHeadline');
@@ -209,14 +210,12 @@
                 document.getElementById('displayCap').innerText = item.cap;
                 document.getElementById('badgeCounter').innerText = `Memory ${activeStep} of 18`;
 
-                // Reset standard elements if they press back from 18
                 propTitle.style.display = 'none';
                 noButton.style.display = 'none';
                 nextButton.className = 'btn-premium';
                 noButton.style.transform = 'translate(0px, 0px)'; 
 
                 if (activeStep === 18) {
-                    // Turn Slide 18 into full cinematic Proposal Layout
                     propTitle.style.display = 'block';
                     noButton.style.display = 'block';
                     nextButton.innerText = "YES! I WILL 💍";
@@ -251,7 +250,6 @@
             }
         }
 
-        // NO BUTTON ESCAPE MATRIX
         function escapeNo() {
             const noBtn = document.getElementById('noButton');
             const randomX = Math.random() * 180 - 90; 
@@ -259,7 +257,6 @@
             noBtn.style.transform = `translate(${randomX}px, ${randomY}px)`;
         }
 
-        // SUCCESS CELEBRATION SHOWER
         function celebrateLove() {
             document.getElementById('propHeadline').innerHTML = "<span style='color:#22c55e;'>I Knew It! I Love You Hamesha, Bisma! ❤️🔒</span>";
             document.getElementById('noButton').style.display = 'none';
